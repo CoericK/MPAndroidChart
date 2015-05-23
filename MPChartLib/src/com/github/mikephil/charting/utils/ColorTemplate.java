@@ -5,6 +5,7 @@ import android.content.res.Resources;
 import android.graphics.Color;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Class that holds predefined color integer arrays (e.g.
@@ -14,6 +15,8 @@ import java.util.ArrayList;
  * @author Philipp Jahoda
  */
 public class ColorTemplate {
+
+    public static final int COLOR_NONE = -1;
 
     /**
      * THE COLOR THEMES ARE PREDEFINED (predefined color integer arrays), FEEL
@@ -40,19 +43,6 @@ public class ColorTemplate {
             Color.rgb(140, 234, 255), Color.rgb(255, 140, 157)
     };
 
-    // public static final int[] FRESH_COLORS = {
-    // R.color.fresh_1, R.color.fresh_2, R.color.fresh_3, R.color.fresh_4,
-    // R.color.fresh_5
-    // };
-    // public static final int[] MONO_COLORS = {
-    // R.color.mono_1, R.color.mono_2, R.color.mono_3, R.color.mono_4,
-    // R.color.mono_5
-    // };
-    // public static final int[] GREEN_COLORS = {
-    // R.color.greens_1, R.color.greens_2, R.color.greens_3, R.color.greens_4,
-    // R.color.greens_5
-    // };
-
     /**
      * Returns the Android ICS holo blue light color.
      * 
@@ -70,9 +60,9 @@ public class ColorTemplate {
      * @param colors an integer array of resource id's of colors
      * @return
      */
-    public static ArrayList<Integer> createColors(Resources r, int[] colors) {
+    public static List<Integer> createColors(Resources r, int[] colors) {
 
-        ArrayList<Integer> result = new ArrayList<Integer>();
+        List<Integer> result = new ArrayList<Integer>();
 
         for (int i : colors) {
             result.add(r.getColor(i));
@@ -88,9 +78,9 @@ public class ColorTemplate {
      * @param colors
      * @return
      */
-    public static ArrayList<Integer> createColors(int[] colors) {
+    public static List<Integer> createColors(int[] colors) {
 
-        ArrayList<Integer> result = new ArrayList<Integer>();
+        List<Integer> result = new ArrayList<Integer>();
 
         for (int i : colors) {
             result.add(i);
